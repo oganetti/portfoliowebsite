@@ -1,0 +1,26 @@
+/* TextAnimation.css - Sadece home page için */
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+
+.text-animation-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+}
+
+.text-block {
+  width: 600px;
+  margin: 20px;
+  font-family: 'Space Mono', monospace;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 24px;
+  color: #fff;
+  line-height: 1.5;
+}
+
+.char {
+  will-change: transform;
+}

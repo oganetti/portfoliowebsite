@@ -1,0 +1,11 @@
+/* components/Home/Home.css */
+
+.home {
+  min-height: 100vh;
+  padding-top: 80px; /* Navigation yüksekliği için */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+}
+

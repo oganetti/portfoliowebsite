@@ -1,0 +1,267 @@
+/* MyProjects.css */
+
+@import url("https://fonts.googleapis.com/css2?family=Sora&display=swap");
+
+@font-face {
+  font-family: "Bandeins Sans & Strange Variable";
+  src: url("https://res.cloudinary.com/dldmpwpcp/raw/upload/v1566406079/BandeinsStrangeVariable_esetvq.ttf");
+}
+
+/* Base Styles - Override global styles */
+.projects-container {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  color: #fff;
+  background: #4361ee;
+  font-family: "Sora", sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.projects-container * {
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.projects-container ::-webkit-scrollbar {
+  display: none;
+}
+
+.projects-container figure {
+  margin: 0;
+  overflow: hidden;
+}
+
+/* Slide Styles */
+.slide {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  position: fixed;
+  visibility: hidden;
+}
+
+.slide--active {
+  visibility: visible;
+}
+
+.slide__outer,
+.slide__inner {
+  width: 100%;
+  height: 100%;
+  overflow-y: hidden;
+}
+
+.slide__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+}
+
+.slide__container {
+  position: relative;
+  max-width: 1400px;
+  width: 100vw;
+  margin: 0 auto;
+  height: 90vh;
+  margin-bottom: 10vh;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  padding: 0 1rem;
+}
+
+.slide__heading {
+  --width: 200;
+  display: block;
+  text-align: left;
+  font-family: "Bandeins Sans & Strange Variable", Arial, sans-serif;
+  font-size: clamp(2rem, 6vw, 6rem);
+  font-weight: 900;
+  font-variation-settings: "wdth" var(--width);
+  margin: 0;
+  padding: 0;
+  color: #f2f1fc;
+  z-index: 999;
+  mix-blend-mode: difference;
+  grid-area: 1 / 2 / 2 / 10;
+  align-self: end;
+  will-change: transform;
+}
+
+.slide__img-cont {
+  margin-top: 4rem;
+  grid-area: 2 / 1 / 7 / 6;
+  margin: 0;
+  overflow: hidden;
+}
+
+.slide__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  will-change: transform;
+}
+
+/* Slide Colors */
+.slide:nth-of-type(1) .slide__content {
+  background-color: #6d597a;
+}
+
+.slide:nth-of-type(2) .slide__content {
+  background-color: #355070;
+}
+
+.slide:nth-of-type(3) .slide__content {
+  background-color: #b56576;
+}
+
+.slide:nth-of-type(4) .slide__content {
+  background-color: #9a8c98;
+}
+
+/* Overlay Styles */
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.overlay__content {
+  max-width: 1400px;
+  width: 100vw;
+  margin: 0 auto;
+  padding: 0 1rem;
+  height: 90vh;
+  margin-bottom: 10vh;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.overlay__img-cont {
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  grid-area: 5 / 4 / 10 / 11;
+}
+
+.overlay__img-cont .image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  will-change: transform;
+}
+
+.overlay__count {
+ grid-area: 1 / 9 / 2 / 10;
+  font-size: clamp(3rem, 4vw, 15rem);
+  margin: 0;
+  padding: 0;
+  text-align: right;
+  border-bottom: 7px white solid;
+  font-weight: 700;
+}
+
+.overlay__title {
+  grid-area: 2 / 7 / 3 / 11;
+  font-size: clamp(1.5rem, 3vw, 3rem);
+  font-weight: 700;
+  margin: 0;
+  text-align: right;
+  color: #fff;
+}
+
+.overlay__description {
+  grid-area: 3 / 6 / 4 / 11;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  margin: 0;
+  text-align: right;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.4;
+}
+
+.count {
+  font-weight: 700;
+}
+
+/* Footer Styles */
+.projects-footer {
+  position: fixed;
+  z-index: 999;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  width: 100%;
+  height: 7em;
+  font-family: "Sora", sans-serif;
+  font-size: clamp(1.2rem, 2vw, 1rem);
+}
+
+.projects-footer a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.projects-footer a:hover {
+  color: #00f5ff;
+  text-shadow: 0 0 10px rgba(0, 245, 255, 0.5);
+}
+
+.projects-footer p {
+  margin: 0;
+  font-weight: 300;
+  opacity: 0.8;
+}
+
+/* Responsive Design */
+@media screen and (min-width: 0px) {
+  .overlay__content,
+  .slide__container {
+    padding: 0 3rem;
+    margin-top: 10vh;
+    height: 80vh;
+  }
+  
+  .overlay__img-cont {
+    grid-area: 5 / 4 / 10 / 11;
+  }
+  
+  .overlay__count {
+   grid-area: 1 / 9 / 2 / 10;
+  }
+  
+  .slide__img-cont {
+    margin-top: 0;
+    grid-area: 3 / 1 / 8 / 5;
+  }
+  
+  .slide__heading {
+    grid-area: 1 / 1 / 2 / 10;
+  }
+}
+
