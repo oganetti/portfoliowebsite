@@ -8,7 +8,7 @@ const Navigation = () => {
   return (
     <nav className="navigation">
       <div className="nav-brand">
-        <Link to="/">PAGE</Link>
+       
       </div>
       
       <div className="nav-links">
@@ -23,6 +23,18 @@ const Navigation = () => {
           className={location.pathname === '/projects' ? 'active' : ''}
         >
           Projects
+        </Link>
+        <Link 
+          to="/technologies" 
+          className={location.pathname === '/technologies' ? 'active' : ''}
+        >
+          Technologies
+        </Link>
+         <Link 
+          to="/contact" 
+          className={location.pathname === '/contact' ? 'active' : ''}
+        >
+          Contact
         </Link>
       </div>
     </nav>

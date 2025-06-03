@@ -1,0 +1,144 @@
+/* Technologies.css */
+
+@import url("'https://fonts.googleapis.com/css2?family=Andada+Pro:ital,wght@0,400..840;1,400..840&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Geist:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap'");
+
+.technologies-container {
+  min-height: 100vh;
+  background: #0C0C0C;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  cursor: none;
+  padding: 100px 2rem 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  
+}
+
+.tech-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin-bottom: 4rem;
+  
+}
+
+.tech-title {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 900;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, #00f5ff, #ff00aa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  
+}
+
+.tech-instruction {
+
+  top: 40vh;
+  font-family: termina, sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 12vw;
+  text-align: center;
+  width: 100%;
+  transform: translateY(-60%);
+  z-index: 2;
+  color: white;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: rgb(238, 234, 234);
+}
+
+/* Hand cursor */
+.tech-hand {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  opacity: 0;
+  pointer-events: none;
+  width: 30px;
+}
+
+.tech-hand small {
+  position: absolute;
+  left: -50%;
+  top: 20px;
+  width: 200%;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.8rem;
+   font-family:  "Geist", sans-serif;
+}
+
+.tech-drag,
+.tech-rock {
+  position: absolute;
+  z-index: 4;
+  max-width: 141%;
+  opacity: 0;
+  right: 1px;
+  top: -22px;
+  width: 131%;
+}
+
+.tech-drag {
+  opacity: 1;
+}
+
+.tech-handle {
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  right: 0;
+  top: -40px;
+  width: 100%;
+}
+
+.tech-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.tech-proxy {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 5;
+  cursor: none;
+}
+
+.explosion-img {
+  will-change: transform;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 268px) {
+  .technologies-container {
+    cursor: auto;
+    padding: 80px 1rem 50px;
+  }
+  
+  .tech-hand {
+    display: none;
+  }
+  
+  .tech-proxy {
+    cursor: auto;
+  }
+  
+  .tech-instruction {
+    font-size: 1.2rem;
+  }
+}

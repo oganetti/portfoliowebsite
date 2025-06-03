@@ -1,0 +1,99 @@
+/* SplitTextDemo.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Yesteryear&display=swap');
+
+.split-text-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+  z-index: 3;
+}
+
+.split-heading {
+  opacity: 0; /* Start hidden like original */
+  font-family:  "Yesteryear", cursive;
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 200;
+  text-align: center;
+  margin: 0;
+  padding: 2rem;
+  line-height: 1.2;
+}
+
+.word {
+  display: inline-block;
+  border: 2px  #4c5265;
+  background: white;
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  height: auto;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  margin: 0.25rem;
+  animation: gradientShift 3s ease infinite;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.word::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.word:hover {
+  border-color: grey;
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px grey;
+}
+
+.word:hover::before {
+  left: 100%;
+}
+
+sup {
+  line-height: 0;
+  font-size: 0.6em;
+  color: rgba(255, 255, 255, 0.7);
+  vertical-align: super;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .split-text-container {
+    margin-top: 2rem;
+  }
+  
+  .split-heading {
+    padding: 1rem;
+  }
+  
+  .word {
+    padding: 0.3rem 0.8rem;
+    margin: 0.2rem;
+    font-size: 0.9em;
+  }
+}

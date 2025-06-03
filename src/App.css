@@ -1,6 +1,15 @@
-/* App.css - Sadeleştirilmiş */
-.app {
-  min-height: 100vh;
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #1a1721;
+  color: white;
 }
 
-/* Diğer global stilleri çıkar veya scope'la */
+html {
+  background-color: #1a1721;
+}
+
+#root {
+  background-color: #1a1721;
+  min-height: 100vh;
+}

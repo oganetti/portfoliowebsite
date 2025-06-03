@@ -1,0 +1,134 @@
+.contact-container {
+  margin: 0;
+  background-color: #0C0C0C;
+  color: black;
+
+  padding: 0;
+
+  min-height: 100vh;
+
+}
+
+#wrapper {
+  overflow: hidden;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+#content {
+  overflow: visible;
+  width: 100%;
+}
+
+.text {
+  position: fixed;
+  top: 40vh;
+  font-family: termina, sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 12vw;
+  text-align: center;
+  width: 100%;
+  transform: translateY(-100%);
+  z-index: 2;
+  color: white;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: rgb(238, 234, 234);
+
+}
+
+.outline-text {
+  color: transparent;
+  -webkit-text-stroke-width: 3.5px;
+  -webkit-text-stroke-color: rgb(204, 198, 198);
+  z-index: 2;
+}
+
+.filter-text {
+  mix-blend-mode: screen;
+  color: rgb(39, 38, 36);
+  z-index: 2;
+}
+
+.images {
+  padding-top: 60vh;
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin:  auto;
+  min-height: 15vh;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(20, 2%);
+  grid-template-rows: repeat(30, 3%);
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  z-index: 1;
+  gap: 10px; /* Resimler arası boşluk */
+}
+
+.content__slide-item {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.images a {
+  display: block;
+
+  text-decoration: none;
+  border-radius: 8px; /* Köşeleri yuvarla */
+
+}
+
+.images a img {
+  width: 200%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  aspect-ratio: 1; /* Tam kare yapar */
+}
+
+.images a img:hover {
+  opacity: 0.8;
+  transform: scale(1.05); /* Hover'da hafif büyütme */
+}
+
+.images a:nth-child(1) {
+  grid-area: 1/1/5/5;
+}
+
+.images a:nth-child(2) {
+  grid-area: 3/13/7/17;
+}
+
+.images a:nth-child(3) {
+  grid-area: 9/6/13/10;
+}
+
+.images a:nth-child(4) {
+  grid-area: 14/2/18/6;
+}
+
+.images a:nth-child(5) {
+  grid-area: 16/13/20/17;
+}
+
+.images a:nth-child(6) {
+  grid-area: 21/3/25/7;
+}
+
+.images a:nth-child(7) {
+  grid-area: 23/12/27/16;
+}
+
+.images a:nth-child(8) {
+  grid-area: 30/6/31/10;
+}

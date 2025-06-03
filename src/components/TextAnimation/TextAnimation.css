@@ -3,11 +3,11 @@
 
 .text-animation-container {
   width: 100%;
-  min-height: 100vh;
+  min-height: 10vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #000;
+  background: #0C0C0C
 }
 
 .text-block {

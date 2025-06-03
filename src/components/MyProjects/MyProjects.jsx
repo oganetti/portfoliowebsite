@@ -49,7 +49,7 @@ const MyProjects = () => {
       title: "E-COMMERCE",
       image: "https://images.unsplash.com/photo-1567016376408-0226e4d0c1ea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0NjMyMDUzOA&ixlib=rb-1.2.1&q=80&w=400",
       overlayImage: "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0NjMxOTU4Mw&ixlib=rb-1.2.1&q=80&w=800",
-      color: "#6d597a",
+      color: "#0C0C0C",
       description: "Modern e-commerce platform with React & Node.js Modern e-commerce platform with React & Node.js Modern e-commerce platform with React & Node.js"
     },
     {
@@ -260,8 +260,7 @@ const MyProjects = () => {
 
       {/* Footer */}
       <footer className="projects-footer">
-        <a href="#projects">My Projects</a>
-        <p>GSAP Portfolio by Ogan</p>
+     
       </footer>
     </div>
   );
