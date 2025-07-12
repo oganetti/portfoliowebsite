@@ -36,6 +36,12 @@ const Navigation = () => {
         >
           Contact
         </Link>
+          <Link 
+          to="/cv" 
+          className={location.pathname === '/cv' ? 'active' : ''}
+        >
+          CV
+        </Link>
       </div>
     </nav>
   );

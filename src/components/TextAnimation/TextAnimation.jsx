@@ -56,7 +56,7 @@ const TextAnimation = () => {
   return (
     <div className="text-block" ref={textBlockRef}>
       <p>
-       Hello My Name is Ogan Dragonetti. I am a software developer.
+       Hello my name is Ogan Dragonetti. I am a software developer.
       </p>
     </div>
   );

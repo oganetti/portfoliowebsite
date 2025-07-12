@@ -1,0 +1,155 @@
+.cv-container {
+  margin: 0;
+  background: linear-gradient(135deg, #0C0C0C 0%, #1a1a1a 100%);
+  color: white;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cv-title {
+  font-family: termina, sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 100px;
+  text-align: center;
+  color: white;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: rgb(238, 234, 234);
+  margin: 0 0 40px 0;
+}
+
+.cv-button-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cv-button {
+  background: white;
+  color: black;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
+}
+
+.cv-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.3);
+}
+
+.cv-button:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cv-title {
+    font-size: 60px;
+    margin-bottom: 30px;
+  }
+  
+  .cv-button {
+    padding: 14px 28px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cv-title {
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+  
+  .cv-button {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+}
+
+.cv-background-elements {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.floating-element {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.1;
+  animation: float 6s ease-in-out infinite;
+}
+
+.element-1 {
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.element-2 {
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(45deg, #4ecdc4, #45b7d1);
+  top: 60%;
+  right: 15%;
+  animation-delay: 2s;
+}
+
+.element-3 {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(45deg, #45b7d1, #ff6b6b);
+  bottom: 20%;
+  left: 20%;
+  animation-delay: 4s;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cv-title {
+    font-size: 60px;
+  }
+  
+  .cv-card {
+    padding: 30px;
+  }
+  
+  .download-btn {
+    padding: 16px 32px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cv-title {
+    font-size: 40px;
+  }
+  
+  .cv-card {
+    padding: 20px;
+    margin: 20px;
+  }
+  
+  .download-btn {
+    padding: 14px 28px;
+    font-size: 14px;
+  }
+  
+  .cv-content {
+    padding-top: 50vh;
+  }
+}

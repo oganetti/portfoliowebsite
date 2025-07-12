@@ -5,6 +5,7 @@ import MyProjects from './components/MyProjects/MyProjects';
 import Technologies from './components/Technologies/Technologies';
 import Navigation from './components/Navigation/Navigation';
 import Contact from './components/Contact/Contact';
+import CV from './components/CV/CV';
 import './App.css';
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
           <Route path="/projects" element={<MyProjects />} />
           <Route path="/technologies" element={<Technologies />} />
            <Route path="/contact" element={<Contact />} />
-
+          <Route path="/cv" element={<CV />} />
 
         </Routes>
       </div>

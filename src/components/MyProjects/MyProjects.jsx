@@ -4,6 +4,8 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './MyProjects.css';
 
+
+
 // GSAP Observer mock for demo
 const Observer = {
   create: (options) => {
@@ -46,33 +48,86 @@ const MyProjects = () => {
 
   const projectData = [
     {
-      title: "E-COMMERCE",
-      image: "https://images.unsplash.com/photo-1567016376408-0226e4d0c1ea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0NjMyMDUzOA&ixlib=rb-1.2.1&q=80&w=400",
-      overlayImage: "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0NjMxOTU4Mw&ixlib=rb-1.2.1&q=80&w=800",
+      title: "PC GAME",
+       url: "https://store.steampowered.com/app/1604180/Laika/",
+      image: "/steam2.webp",
+      overlayImage: "/laika1.png",
       color: "#0C0C0C",
-      description: "Modern e-commerce platform with React & Node.js Modern e-commerce platform with React & Node.js Modern e-commerce platform with React & Node.js"
+      description: "Laika is a third person perma-death runner game where you have to deal with various obstacles that exist to end your life. The main goal of this game is to survive until the end."
     },
     {
-      title: "PORTFOLIO",
-      image: "https://images.unsplash.com/photo-1558603668-6570496b66f8?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0NjMyMDUzOA&ixlib=rb-1.2.1&q=85&w=400",
-      overlayImage: "https://images.unsplash.com/photo-1594666757003-3ee20de41568?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0NjMxOTcwOA&ixlib=rb-1.2.1&q=80&w=800",
+      title: "UNITY ASSET",
+      url: "https://assetstore.unity.com/packages/tools/gui/basic-menu-options-238520",
+      image: "/asset2.png",
+      overlayImage: "/asset1.png",
       color: "#355070",
-      description: "Interactive portfolio with GSAP animations  Interactive portfolio with GSAP animations Interactive portfolio with GSAP animations"
+      description: "A Menu and Options (Settings) for games.The asset can change resolution, quality, and other video settings. In the Audio Setting, you can change your SFX and music volume. In the control setting, there is a sensitivity slider. Lastly, there is a simple Loading Screen in the package."
     },
     {
-      title: "MOBILE APP",
-      image: "https://images.unsplash.com/photo-1537165924986-cc3568f5d454?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0NjMyMDU4NA&ixlib=rb-1.2.1&q=85&w=400",
-      overlayImage: "https://images.unsplash.com/photo-1579830341096-05f2f31b8259?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0NjMxOTQ5Ng&ixlib=rb-1.2.1&q=80&w=800",
+      title: "MOBILE GAME",
+      url: "https://www.linkedin.com/in/ogan-dragonetti-2666a3151/?originalSubdomain=tr",
+      image: "/OldCar2.jpg",
+      overlayImage: "/google2.jpg",
       color: "#b56576",
-      description: "Cross-platform mobile app with React Native Cross-platform mobile app with React Native Cross-platform mobile app with React Native"
+      description: "Old Car is a new free hard casual game. Finish the levels and win the game."
     },
     {
-      title: "WEB DESIGN",
-      image: "https://images.unsplash.com/photo-1589271243958-d61e12b61b97?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0NjMyMDU4NA&ixlib=rb-1.2.1&q=80&w=400",
-      overlayImage: "https://images.unsplash.com/photo-1603771628302-c32c88e568e3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0NjMxOTUxNg&ixlib=rb-1.2.1&q=80&w=800",
+      title: "WINDOWS APP",
+      url: "https://www.linkedin.com/in/ogan-dragonetti-2666a3151/?originalSubdomain=tr",
+      image: "/WAPP.webp",
+      overlayImage: "/WAPP.jpg",
       color: "#9a8c98",
-      description: "Creative web design with modern UI/UX Creative web design with modern UI/UX Creative web design with modern UI/UX"
-    }
+      description: "Developed a Windows application for an insurance company using WPF and DevExpress, adhering to the MVVM pattern. Implemented data charts with data binding and created a scalablebackend with the .NET framework"
+    },
+     {
+      title: "WEB APP",
+      url: "https://www.linkedin.com/in/ogan-dragonetti-2666a3151/?originalSubdomain=tr",
+      image: "/myeyerod2.jpg",
+      overlayImage: "/myeyerod.png",
+      color: "#9a8c98",
+      description: "A monitoring system for solar energy sites and panels.The backend is built with Strapi as a CMS system for managing and tracking data.The frontend is developed using React."
+    },
+     {
+      title: "PC GAME",
+       url: "https://store.steampowered.com/app/1540060/Angry_Putin/",
+      image: "/steam2.webp",
+      overlayImage: "/angry.png",
+      color: "#0C0C0C",
+      description: "Angry Putin is a third person simulation game. Putin is angry and he will relax by beating other people, dancing with music and drinking VOTKA VOTKA VOTKA!"
+    },
+     {
+      title: "ITCH.IO ASSET",
+      url: "https://oganetti.itch.io/cool-stick-man",
+      image: "/itch.svg",
+      overlayImage: "/stick.png",
+      color: "#355070",
+      description: "A Menu and Options (Settings) for games.The asset can change resolution, quality, and other video settings. In the Audio Setting, you can change your SFX and music volume. In the control setting, there is a sensitivity slider. Lastly, there is a simple Loading Screen in the package."
+    },
+    {
+      title: "UNITY ASSET",
+      url: "https://assetstore.unity.com/packages/vfx/shaders/basic-toon-shader-built-in-303287",
+      image: "/unityasset.png",
+      overlayImage: "/shader.png",
+      color: "#355070",
+      description: "Basic Toon Shader helps you give your 3D objects a fun cartoon look without sticking to one style. It includes example scenes that you can use in your projects. You can also use it on built-in Unity projects to create your own assets and achieve the cartoon style you want."
+    },
+    {
+      title: "MOBILE GAME",
+      url: "https://www.linkedin.com/in/ogan-dragonetti-2666a3151/?originalSubdomain=tr",
+      image: "/BunCube1.webp",
+      overlayImage: "/google2.jpg",
+      color: "#b56576",
+      description: "BunCube is a new free hard casual game. Finish the levels and win the game."
+    },
+     {
+      title: "ITCH.IO ASSET",
+      url: "https://oganetti.itch.io/basic-toon-water-shader-built-in",
+      image: "/itch.svg",
+      overlayImage: "/shader3.png",
+      color: "#355070",
+      description: "Basic Toon Water Shader allows you to create water effects in a basic toon style for your 3D objects, without being limited to a specific look."
+    },
+    
   ];
 
   useEffect(() => {
@@ -80,7 +135,7 @@ const MyProjects = () => {
     let animating = false;
 
     const sections = gsap.utils.toArray(".slide");
-    const images = gsap.utils.toArray(".image").reverse();
+    const images = gsap.utils.toArray(".image");
     const slideImages = gsap.utils.toArray(".slide__img");
     const outerWrappers = gsap.utils.toArray(".slide__outer");
     const innerWrappers = gsap.utils.toArray(".slide__inner");
@@ -234,7 +289,11 @@ const MyProjects = () => {
             <div className="slide__inner">
               <div className="slide__content" style={{ backgroundColor: project.color }}>
                 <div className="slide__container">
-                  <h2 className="slide__heading">{project.title}</h2>
+                  <h2 className="slide__heading">
+  <a href={project.url} target="_blank" rel="noopener noreferrer">
+    {project.title}
+  </a>
+</h2>
                   <figure className="slide__img-cont">
                     <img className="slide__img" src={project.image} alt={project.title} />
                   </figure>

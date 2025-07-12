@@ -1,5 +1,8 @@
 import { useEffect, useRef } from 'react';
 import './Contact.css';
+import unityIcon from '../../assets/unity.png';
+import steamIcon from '../../assets/steam.png';
+import itchIcon from '../../assets/itch.png';
 
 const Contact = () => {
   const wrapperRef = useRef(null);
@@ -142,45 +145,36 @@ const Contact = () => {
 
   const socialLinks = [
     {
-      type: 'linkedin',
-      url: 'https://linkedin.com/in/your-profile',
-      icon: 'https://images.unsplash.com/photo-1556856425-366d6618905d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fG5lb258ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60'
+      type: 'unity',
+      url: 'https://assetstore.unity.com/publishers/76256',
+      icon: unityIcon  
     },
     {
-      type: 'github', 
-      url: 'https://github.com/your-username',
-      icon: 'https://cdn-icons-png.flaticon.com/512/174/174857.png'
+      type: 'itch',
+      url: 'https://oganetti.itch.io/',
+      icon: itchIcon
     },
-    {
-      type: 'linkedin',
-      url: 'https://linkedin.com/in/your-profile',
-      icon: 'https://cdn-icons-png.flaticon.com/512/174/174857.png'
+       {
+      type: 'steam', 
+      url: 'https://store.steampowered.com/curator/42291400',
+      icon: steamIcon
     },
     {
       type: 'github',
-      url: 'https://github.com/your-username', 
+      url: 'https://github.com/oganetti/', 
       icon: 'https://cdn-icons-png.flaticon.com/512/25/25231.png'
     },
     {
       type: 'linkedin',
-      url: 'https://linkedin.com/in/your-profile',
+      url: 'https://www.linkedin.com/in/ogan-dragonetti-2666a3151/?originalSubdomain=tr',
       icon: 'https://cdn-icons-png.flaticon.com/512/174/174857.png'
     },
     {
-      type: 'github',
-      url: 'https://github.com/your-username',
-      icon: 'https://cdn-icons-png.flaticon.com/512/174/174857.png'
-    },
-    {
-      type: 'linkedin',
-      url: 'https://linkedin.com/in/your-profile', 
-      icon: 'https://cdn-icons-png.flaticon.com/512/174/174857.png'
-    },
-    {
-      type: 'github',
-      url: 'https://github.com/your-username',
-      icon: 'https://cdn-icons-png.flaticon.com/512/174/174857.png'
-    }
+  type: 'email',
+  url: 'mailto:ogandragonetti@gmail.com',
+  icon: 'https://cdn-icons-png.flaticon.com/512/732/732200.png' // Mail icon
+}
+    
   ];
 
   const dataSpeeds = [0.8, 0.9, 1, 1.1, 0.9, 1.2, 0.8, 1];

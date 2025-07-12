@@ -14,7 +14,6 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  
 }
 
 .tech-content {
@@ -22,34 +21,31 @@
   z-index: 2;
   text-align: center;
   margin-bottom: 4rem;
-  
 }
 
 .tech-title {
-  font-size: clamp(3rem, 8vw, 6rem);
-  font-weight: 900;
+  font-size: clamp(1rem, 1vw, 6rem);
+  font-weight: 800;
   margin-bottom: 1rem;
   background: linear-gradient(45deg, #00f5ff, #ff00aa);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  
 }
 
 .tech-instruction {
-
-  top: 40vh;
+  position: relative;
   font-family: termina, sans-serif;
   font-weight: 900;
   font-style: normal;
-  font-size: 12vw;
+  font-size: 100px;
   text-align: center;
   width: 100%;
-  transform: translateY(-60%);
   z-index: 2;
   color: white;
-  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-width: .5px;
   -webkit-text-stroke-color: rgb(238, 234, 234);
+  margin-bottom: 15rem;
 }
 
 /* Hand cursor */
@@ -70,7 +66,7 @@
   width: 200%;
   color: rgba(255, 255, 255, 0.8);
   font-size: 0.8rem;
-   font-family:  "Geist", sans-serif;
+  font-family: "Geist", sans-serif;
 }
 
 .tech-drag,
@@ -123,8 +119,58 @@
   pointer-events: none;
 }
 
+/* Technology Icons Grid */
+.tech-icons-grid {
+  position: relative;
+  z-index: 3;
+  margin-top: 2rem;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.tech-icons-container {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 0.8rem;
+  justify-items: center;
+  align-items: center;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.tech-icon {
+  width: 40px;
+  height: 40px;
+  transition: all 0.3s ease;
+  filter: grayscale(0.2) brightness(0.9);
+  border-radius: 6px;
+  padding: 5px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.tech-icon:hover {
+  transform: translateY(-3px) scale(1.15);
+  filter: grayscale(0) brightness(1.1);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(0, 245, 255, 0.4);
+  box-shadow: 0 8px 20px rgba(0, 245, 255, 0.15);
+}
+
+.tech-icons-title {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: "Geist", sans-serif;
+}
+
 /* Responsive */
-@media (max-width: 268px) {
+@media (max-width: 768px) {
   .technologies-container {
     cursor: auto;
     padding: 80px 1rem 50px;
@@ -139,6 +185,46 @@
   }
   
   .tech-instruction {
-    font-size: 1.2rem;
+    font-size: 80px;
+    margin-bottom: 2rem;
+  }
+  
+  .tech-icons-container {
+    grid-template-columns: repeat(8, 1fr);
+    gap: 0.6rem;
+  }
+  
+  .tech-icon {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+/* Responsive */
+@media (max-width: 268px) {
+ .tech-icons-container {
+    grid-template-columns: repeat(auto-fit, minmax(45px, 1fr));
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+  
+  .tech-icon {
+    width: 40px;
+    height: 40px;
+    padding: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tech-icons-container {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.8rem;
+    padding: 1rem;
+  }
+  
+  .tech-icon {
+    width: 35px;
+    height: 35px;
+    padding: 5px;
   }
 }

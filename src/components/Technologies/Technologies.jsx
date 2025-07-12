@@ -2,6 +2,10 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import './Technologies.css';
 
+import steamIcon from '../../assets/steam.png';
+import itchIcon from '../../assets/itch.png';
+import unityIcon from '../../assets/unity.png';
+
 // Mock GSAP plugins - replace with real imports
 const Observer = {
   create: (options) => {
@@ -58,27 +62,48 @@ const Technologies = () => {
 
   // Tech images data
   const techImages = [
-    { key: "react", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-    { key: "js", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
-    { key: "ts", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
-    { key: "node", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-    { key: "python", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
-    { key: "css", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
-    { key: "html", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
-    { key: "git", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
-    { key: "mongodb", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
-    { key: "figma", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" }
+  { key: "react", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+  { key: "js", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+  { key: "ts", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+  { key: "node", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+  { key: "python", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+  { key: "csharp", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" },
+  { key: "dotnet", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" },
+  { key: "css", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+  { key: "html", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+  { key: "git", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
+  { key: "mongodb", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
+  { key: "figma", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
+  { key: "unity", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg" },
+  { key: "docker", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
+  { key: "mysql", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+  { key: "postgresql", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
+  { key: "nextjs", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
+  { key: "vscode", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
+    { key: "unity", src: unityIcon }
   ];
 
   const explosionImages = [
-    { key: "react", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-    { key: "js", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
-    { key: "ts", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
-    { key: "node", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-    { key: "python", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
-    { key: "css", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
-    { key: "html", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
-    { key: "git", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" }
+{ key: "react", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+  { key: "js", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+  { key: "ts", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+  { key: "node", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+  { key: "python", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+  { key: "csharp", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" },
+  { key: "dotnet", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" },
+  { key: "css", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+  { key: "html", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+  { key: "git", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
+  { key: "mongodb", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
+  { key: "figma", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
+  { key: "unity", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg" },
+  { key: "docker", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
+  { key: "mysql", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+  { key: "postgresql", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
+  { key: "tailwind", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" },
+  { key: "express", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
+  { key: "nextjs", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
+  { key: "vscode", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" }
   ];
 
   useEffect(() => {
@@ -326,25 +351,41 @@ const Technologies = () => {
     };
   }, []);
 
-  return (
-    <div className="technologies-container" ref={heroRef}>
-      <div className="tech-content">
-       
-        <p className="tech-instruction">What I use</p>
-      </div>
-
-      {/* Hand cursor */}
-      <div className="tech-hand" ref={handRef}>
-        <img className="tech-drag" ref={dragRef} src="https://assets.codepen.io/16327/hand-drag.png" alt="" />
-        <img className="tech-rock" ref={rockRef} src="https://assets.codepen.io/16327/hand-rock.png" alt="" />
-        <img className="tech-handle" ref={handleRef} src="https://assets.codepen.io/16327/2D-circle.png" alt="" />
-        <small ref={instructionsRef}>drag me</small>
-      </div>
-
-      <svg className="tech-canvas" ref={canvasRef}></svg>
-      <div className="tech-proxy" ref={proxyRef}></div>
+return (
+  <div className="technologies-container" ref={heroRef}>
+    <div className="tech-content">
+      <p className="tech-instruction">What I use</p>
     </div>
-  );
+
+    {/* Hand cursor */}
+    <div className="tech-hand" ref={handRef}>
+      <img className="tech-drag" ref={dragRef} src="https://assets.codepen.io/16327/hand-drag.png" alt="" />
+      <img className="tech-rock" ref={rockRef} src="https://assets.codepen.io/16327/hand-rock.png" alt="" />
+      <img className="tech-handle" ref={handleRef} src="https://assets.codepen.io/16327/2D-circle.png" alt="" />
+      <small ref={instructionsRef}>drag me</small>
+    </div>
+
+    {/* Technology Icons Grid */}
+    <div className="tech-icons-grid">
+      <div className="tech-icons-container">
+        {techImages.map((tech, index) => (
+          <img
+            key={tech.key}
+            src={tech.src}
+            alt={tech.key}
+            className="tech-icon"
+            style={{
+              animationDelay: `${index * 0.1}s`
+            }}
+          />
+        ))}
+      </div>
+    </div>
+
+    <svg className="tech-canvas" ref={canvasRef}></svg>
+    <div className="tech-proxy" ref={proxyRef}></div>
+  </div>
+);
 };
 
 export default Technologies;
