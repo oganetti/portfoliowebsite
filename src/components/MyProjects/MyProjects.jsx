@@ -64,20 +64,20 @@ const MyProjects = () => {
       description: "A Menu and Options (Settings) for games.The asset can change resolution, quality, and other video settings. In the Audio Setting, you can change your SFX and music volume. In the control setting, there is a sensitivity slider. Lastly, there is a simple Loading Screen in the package."
     },
     {
-      title: "MOBILE GAME",
-      url: "https://www.linkedin.com/in/ogan-dragonetti-2666a3151/?originalSubdomain=tr",
-      image: "/OldCar2.jpg",
-      overlayImage: "/google2.jpg",
-      color: "#b56576",
-      description: "Old Car is a new free hard casual game. Finish the levels and win the game."
-    },
-    {
       title: "WINDOWS APP",
       url: "https://www.linkedin.com/in/ogan-dragonetti-2666a3151/?originalSubdomain=tr",
       image: "/WAPP.webp",
       overlayImage: "/WAPP.jpg",
       color: "#9a8c98",
       description: "Developed a Windows application for an insurance company using WPF and DevExpress, adhering to the MVVM pattern. Implemented data charts with data binding and created a scalablebackend with the .NET framework"
+    },
+    {
+      title: "MOBILE GAME",
+      url: "https://www.linkedin.com/in/ogan-dragonetti-2666a3151/?originalSubdomain=tr",
+      image: "/OldCar2.jpg",
+      overlayImage: "/google2.jpg",
+      color: "#C9C19F",
+      description: "Old Car is a new free hard casual game. Finish the levels and win the game."
     },
      {
       title: "WEB APP",
@@ -100,7 +100,7 @@ const MyProjects = () => {
       url: "https://oganetti.itch.io/cool-stick-man",
       image: "/itch.svg",
       overlayImage: "/stick.png",
-      color: "#355070",
+      color: "#C73A3A",
       description: "A Menu and Options (Settings) for games.The asset can change resolution, quality, and other video settings. In the Audio Setting, you can change your SFX and music volume. In the control setting, there is a sensitivity slider. Lastly, there is a simple Loading Screen in the package."
     },
     {
@@ -116,7 +116,7 @@ const MyProjects = () => {
       url: "https://www.linkedin.com/in/ogan-dragonetti-2666a3151/?originalSubdomain=tr",
       image: "/BunCube1.webp",
       overlayImage: "/google2.jpg",
-      color: "#b56576",
+      color: "#C9C19F",
       description: "BunCube is a new free hard casual game. Finish the levels and win the game."
     },
      {
@@ -124,7 +124,7 @@ const MyProjects = () => {
       url: "https://oganetti.itch.io/basic-toon-water-shader-built-in",
       image: "/itch.svg",
       overlayImage: "/shader3.png",
-      color: "#355070",
+      color: "#C73A3A",
       description: "Basic Toon Water Shader allows you to create water effects in a basic toon style for your 3D objects, without being limited to a specific look."
     },
     

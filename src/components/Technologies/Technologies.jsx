@@ -2,8 +2,6 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import './Technologies.css';
 
-import steamIcon from '../../assets/steam.png';
-import itchIcon from '../../assets/itch.png';
 import unityIcon from '../../assets/unity.png';
 
 // Mock GSAP plugins - replace with real imports
@@ -79,8 +77,7 @@ const Technologies = () => {
   { key: "mysql", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
   { key: "postgresql", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
   { key: "nextjs", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
-  { key: "vscode", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
-    { key: "unity", src: unityIcon }
+  { key: "vscode", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" }
   ];
 
   const explosionImages = [
