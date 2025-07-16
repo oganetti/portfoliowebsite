@@ -1,14 +1,17 @@
-// MyProjects.jsx
+// MyProjects.jsx - Güncellenmiş Observer kısmı
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './MyProjects.css';
 
-
-
-// GSAP Observer mock for demo
+// GSAP Observer mock - Mobil touch desteği ile
 const Observer = {
   create: (options) => {
+    let startY = 0;
+    let startX = 0;
+    let isScrolling = false;
+    let touchStartTime = 0;
+    
     const handleWheel = (e) => {
       e.preventDefault();
       if (e.deltaY > 0) {
@@ -27,13 +30,83 @@ const Observer = {
       }
     };
 
+    // Touch başlangıcı
+    const handleTouchStart = (e) => {
+      const touch = e.touches[0];
+      startY = touch.clientY;
+      startX = touch.clientX;
+      touchStartTime = Date.now();
+      isScrolling = false;
+    };
+
+    // Touch hareketi
+    const handleTouchMove = (e) => {
+      if (!startY || !startX) return;
+      
+      const touch = e.touches[0];
+      const currentY = touch.clientY;
+      const currentX = touch.clientX;
+      
+      const diffY = startY - currentY;
+      const diffX = startX - currentX;
+      
+      // Dikey hareket horizontal hareketten daha fazla ise
+      if (Math.abs(diffY) > Math.abs(diffX)) {
+        e.preventDefault(); // Sayfa scroll'unu engelle
+        isScrolling = true;
+      }
+    };
+
+    // Touch sonu
+    const handleTouchEnd = (e) => {
+      if (!startY || !startX || !isScrolling) return;
+      
+      const touch = e.changedTouches[0];
+      const endY = touch.clientY;
+      const endX = touch.clientX;
+      const touchEndTime = Date.now();
+      
+      const diffY = startY - endY;
+      const diffX = startX - endX;
+      const timeDiff = touchEndTime - touchStartTime;
+      
+      // Minimum hareket mesafesi ve maksimum süre kontrolü
+      const minDistance = 50;
+      const maxTime = 600;
+      
+      if (Math.abs(diffY) > Math.abs(diffX) && 
+          Math.abs(diffY) > minDistance && 
+          timeDiff < maxTime) {
+        
+        if (diffY > 0) {
+          // Yukarı kaydırma - sonraki proje
+          options.onUp && options.onUp();
+        } else {
+          // Aşağı kaydırma - önceki proje
+          options.onDown && options.onDown();
+        }
+      }
+      
+      // Reset
+      startY = 0;
+      startX = 0;
+      isScrolling = false;
+    };
+
+    // Event listener'ları ekle
     document.addEventListener('wheel', handleWheel, { passive: false });
     document.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('touchstart', handleTouchStart, { passive: true });
+    document.addEventListener('touchmove', handleTouchMove, { passive: false });
+    document.addEventListener('touchend', handleTouchEnd, { passive: true });
 
     return {
       kill: () => {
         document.removeEventListener('wheel', handleWheel);
         document.removeEventListener('keydown', handleKeyDown);
+        document.removeEventListener('touchstart', handleTouchStart);
+        document.removeEventListener('touchmove', handleTouchMove);
+        document.removeEventListener('touchend', handleTouchEnd);
       }
     };
   }
@@ -49,7 +122,7 @@ const MyProjects = () => {
   const projectData = [
     {
       title: "PC GAME",
-       url: "https://store.steampowered.com/app/1604180/Laika/",
+      url: "https://store.steampowered.com/app/1604180/Laika/",
       image: "/steam2.webp",
       overlayImage: "/laika1.png",
       color: "#0C0C0C",
@@ -79,7 +152,7 @@ const MyProjects = () => {
       color: "#C9C19F",
       description: "Old Car is a new free hard casual game. Finish the levels and win the game."
     },
-     {
+    {
       title: "WEB APP",
       url: "https://www.linkedin.com/in/ogan-dragonetti-2666a3151/?originalSubdomain=tr",
       image: "/myeyerod2.jpg",
@@ -87,15 +160,15 @@ const MyProjects = () => {
       color: "#9a8c98",
       description: "A monitoring system for solar energy sites and panels.The backend is built with Strapi as a CMS system for managing and tracking data.The frontend is developed using React."
     },
-     {
+    {
       title: "PC GAME",
-       url: "https://store.steampowered.com/app/1540060/Angry_Putin/",
+      url: "https://store.steampowered.com/app/1540060/Angry_Putin/",
       image: "/steam2.webp",
       overlayImage: "/angry.png",
       color: "#0C0C0C",
       description: "Angry Putin is a third person simulation game. Putin is angry and he will relax by beating other people, dancing with music and drinking VOTKA VOTKA VOTKA!"
     },
-     {
+    {
       title: "ITCH.IO ASSET",
       url: "https://oganetti.itch.io/cool-stick-man",
       image: "/itch.svg",
@@ -119,15 +192,22 @@ const MyProjects = () => {
       color: "#C9C19F",
       description: "BunCube is a new free hard casual game. Finish the levels and win the game."
     },
-     {
+    {
       title: "ITCH.IO ASSET",
-      url: "https://oganetti.itch.io/basic-toon-water-shader-built-in",
+      url: "https://oganetti.itch.io/cool-stick-man",
       image: "/itch.svg",
-      overlayImage: "/shader3.png",
+      overlayImage: "/stick.png",
       color: "#C73A3A",
       description: "Basic Toon Water Shader allows you to create water effects in a basic toon style for your 3D objects, without being limited to a specific look."
     },
-    
+    {
+      title: "WEB SITE",
+      url: "https://southsidebodrum.com/",
+      image: "/south2.png",
+      overlayImage: "/south.png",
+      color: "#9a8c98",
+      description: "A stylish, responsive promotional website designed for a boutique hotel in Bodrum."
+    },
   ];
 
   useEffect(() => {
@@ -290,10 +370,10 @@ const MyProjects = () => {
               <div className="slide__content" style={{ backgroundColor: project.color }}>
                 <div className="slide__container">
                   <h2 className="slide__heading">
-  <a href={project.url} target="_blank" rel="noopener noreferrer">
-    {project.title}
-  </a>
-</h2>
+                    <a href={project.url} target="_blank" rel="noopener noreferrer">
+                      {project.title}
+                    </a>
+                  </h2>
                   <figure className="slide__img-cont">
                     <img className="slide__img" src={project.image} alt={project.title} />
                   </figure>
@@ -319,7 +399,6 @@ const MyProjects = () => {
 
       {/* Footer */}
       <footer className="projects-footer">
-     
       </footer>
     </div>
   );
