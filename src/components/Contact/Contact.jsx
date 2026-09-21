@@ -181,10 +181,6 @@ const Contact = () => {
 
   return (
     <div className="contact-container">
-      <h1 className="text">Contact</h1>
-     
- 
-      
       <div id="wrapper" ref={wrapperRef}>
         <section id="content" ref={contentRef}>
         <section className="images">
